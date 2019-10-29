@@ -1,0 +1,106 @@
+{
+	"code": 1,
+	"result": {
+		"topFive":[
+			{
+				"name": "深圳公司",
+				"number": 1000
+			},
+			{
+				"name": "武汉公司",
+				"number": 800
+			},
+			{
+				"name": "北京公司",
+				"number": 600
+			},
+			{
+				"name": "青岛公司",
+				"number": 400
+			},
+			{
+				"name": "大连公司",
+				"number": 200
+			}
+		],
+		"current": [
+			{
+				"name": "深圳公司",
+				"number": 1000,
+				"id": 1
+			},
+			{
+				"name": "武汉公司",
+				"number": 800,
+				"id": 2
+			},
+			{
+				"name": "北京公司",
+				"number": 600,
+				"id": 3
+			},
+			{
+				"name": "青岛公司",
+				"number": 400,
+				"id": 4
+			},
+			{
+				"name": "大连公司",
+				"number": 200,
+				"id": 5
+			},
+			{
+				"name": "当前公司",
+				"number": 200,
+				"id": 6
+			},
+			{
+				"name": "南京公司",
+				"number": 200,
+				"id": 7
+			},
+			{
+				"name": "贵阳公司",
+				"number": 400,
+				"id": 8
+			},
+			{
+				"name": "长沙公司",
+				"number": 600,
+				"id": 9
+			},
+			{
+				"name": "广东公司",
+				"number": 800,
+				"id": 10
+			},
+			{
+				"name": "兰州公司",
+				"number": 1000,
+				"id": 11
+			}
+		],
+		"lastFive": [
+			{
+				"name": "南京公司",
+				"number": 200
+			},
+			{
+				"name": "贵阳公司",
+				"number": 400
+			},
+			{
+				"name": "长沙公司",
+				"number": 600
+			},
+			{
+				"name": "广东公司",
+				"number": 800
+			},
+			{
+				"name": "兰州公司",
+				"number": 1000
+			}
+		]
+	}
+}

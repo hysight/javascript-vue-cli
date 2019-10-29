@@ -1,0 +1,60 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "satisfaction": [
+            {
+                "name": "01",
+                "value": 50
+            },
+            {
+                "name": "02",
+                "value": 70
+            },
+            {
+                "name": "03",
+                "value": 80
+            },
+            {
+                "name": "04",
+                "value": 100
+            },
+            {
+                "name": "05",
+                "value": 30
+            },
+            {
+                "name": "06",
+                "value": 70
+            },
+            {
+                "name": "07",
+                "value": 120
+            },
+            {
+                "name": "08",
+                "value": 110
+            },
+            {
+                "name": "09",
+                "value": 60
+            },
+            {
+                "name": "10",
+                "value": 120
+            },
+            {
+                "name": "11",
+                "value": 20
+            },
+            {
+                "name": "12",
+                "value": 55
+            }
+        ],
+        "reform": 97,
+        "close": 96,
+        "quality": 98,
+        "repair": 95
+    }
+}

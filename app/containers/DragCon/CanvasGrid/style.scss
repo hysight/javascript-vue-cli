@@ -1,0 +1,15 @@
+/*
+ * @Description: 
+ * @Author: jiannan.lv
+ * @Date: 2019-06-27 13:52:40
+ * @LastEditTime: 2019-07-03 11:48:39
+ * @LastEditors: jiannan.lv
+ */
+.canvas-grid {
+  left: 0;
+  position: absolute;
+  top: 0;
+  &.hide-canvas-grid {
+    display: none;
+  }
+}

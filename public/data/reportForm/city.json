@@ -1,0 +1,108 @@
+{
+	"code": 1,
+	"result": {
+		"allStrip": 100,
+		"nowPage": 1,
+		"projectList": [{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "1000"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		},{
+			"projectName": "公司1",
+			"id": "公司id",
+			"satisfy": [{
+				"month": "1",
+				"value": "80"
+			}, {
+				"month": "2",
+				"value": "80"
+			}]
+		}]
+	}
+}

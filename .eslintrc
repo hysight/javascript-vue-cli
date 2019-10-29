@@ -1,0 +1,60 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "amd": true
+    },
+    "extends": ["airbnb/base", "eslint:recommended", "hyfe"],
+    "parser": "babel-eslint",
+    "globals": {
+        "$": true,
+        "_data": true,
+        "__DEV__"      : false,
+        "__PROD__"     : false,
+        "__BASENAME__"     : false,
+        "__IP__"     : false
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "templateStrings": true,
+            "superInFunctions": true,
+            "spread": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "import",
+        "react"
+    ],
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "./build/config/webpack.config.js"
+            }
+        }
+    },
+    "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true,
+        "templateStrings": true,
+        "superInFunctions": true,
+        "spread": true
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "eslint linebreak-style": ["error", "windows"],
+        "semi": ["error", "always"],
+        "padded-blocks": ["error", {
+            "switches": "always",
+            "classes": "never",
+            "blocks": "always"
+        }],
+        "max-len": [2, 120]
+    }
+}

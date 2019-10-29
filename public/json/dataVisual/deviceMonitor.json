@@ -1,0 +1,9 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "totalNum": 32000,
+        "normal": 26000,
+        "abnormal": 6000
+    }
+}

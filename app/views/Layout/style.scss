@@ -1,0 +1,39 @@
+/*
+ * @Description: 
+ * @Author: jiannan.lv
+ * @Date: 2019-10-15 17:56:04
+ * @LastEditTime: 2019-10-15 18:01:45
+ * @LastEditors: jiannan.lv
+ */
+.layout {
+  height: 100%;
+  .layout-content-wrap {
+    background: #f0f0f0;
+    height: calc(100% - 50px);
+    width: 100%;
+    > div {
+      float: left;
+      height: 100%;
+      position: relative;
+      &.content {
+        overflow: auto;
+        width: calc(100% - 250px);
+        &.content-active {
+          width: calc(100% - 55px);
+        }
+      }
+      .content-wrap {
+        background: #fff;
+        height: calc(100% - 26px);
+        overflow: hidden;
+        padding: 20px 30px;
+        position: relative;
+        .split-line {
+          border-top: 1px solid #eee;
+          height: 0;
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}

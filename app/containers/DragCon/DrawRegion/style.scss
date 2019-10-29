@@ -1,0 +1,20 @@
+/*
+ * @Description: 
+ * @Author: jiannan.lv
+ * @Date: 2019-06-27 13:47:09
+ * @LastEditTime: 2019-07-03 15:21:43
+ * @LastEditors: jiannan.lv
+ */
+.draw-region {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  .draw-region-content {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}

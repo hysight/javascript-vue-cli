@@ -1,0 +1,18 @@
+/*
+ * @Author: jiannan.lv 
+ * @Date: 2019-05-09 13:26:52 
+ * @Last Modified by: jiannan.lv
+ * @Last Modified time: 2019-05-09 13:56:13
+ */
+.side-com {
+  background: #354157;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  width: 250px;
+  z-index: 5;
+  &.side-com-active {
+    width: 55px;
+  }
+}

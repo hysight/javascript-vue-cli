@@ -1,0 +1,94 @@
+{
+	"code": 0,
+	"message": "success",
+	"result": {
+		"globalData": [{
+		    "name": "海南",
+		    "value": 9
+		}, {
+		    "name": "河南",
+		    "value": 12
+		}, {
+		    "name": "河北",
+		    "value": 14
+		}, {
+		    "name": "湖北",
+		    "value": 25
+		}, {
+		    "name": "广东",
+		    "value": 38
+		}, {
+		    "name": "湖南",
+		    "value": 41
+		}, {
+		    "name": "江西",
+		    "value": 42
+		}, {
+		    "name": "黑龙江",
+		    "value": 50
+		}, {
+		    "name": "四川",
+		    "value": 50
+		}, {
+		    "name": "安徽",
+		    "value": 58
+		}],
+
+		"detailData": [{
+		    "name": "海门",
+		    "value": 9,
+		    "local": {"lng": 121.15,"lat": 31.89},
+		    "id": 1
+		}, {
+		    "name": "鄂尔多斯",
+		    "value": 12,
+		    "local": {"lng": 109.781327, "lat": 39.608266},
+		    "id": 2
+		}, {
+		    "name": "齐齐哈尔",
+		    "value": 14,
+		    "local": {"lng": 123.97, "lat": 47.33},
+		    "id": 11
+		}, {
+		    "name": "上海",
+		    "value": 25,
+		    "local": {"lng": 121.484564, "lat": 31.243339},
+		    "id": 3
+		}, {
+		    "name": "广州",
+		    "value": 18,
+		    "local": {"lng": 113.23, "lat": 23.16},
+		    "id": 4
+		}, {
+		    "name": "深圳",
+		    "value": 11,
+		    "local": {"lng": 114.07, "lat": 22.62},
+		    "id": 5
+		}, {
+		    "name": "珠海",
+		    "value": 12,
+		    "local": {"lng": 113.52, "lat": 22.3},
+		    "id": 6
+		}, {
+		    "name": "沈阳",
+		    "value": 50,
+		    "local": {"lng": 123.38, "lat": 41.8},
+		    "id": 7
+		}, {
+		    "name": "苏州",
+		    "value": 50,
+		    "local": {"lng":120.62, "lat": 31.32},
+		    "id": 8
+		}, {
+		    "name": "呼和浩特",
+		    "value": 58,
+		    "local": {"lng":111.76701, "lat": 40.853224},
+		    "id": 9
+		}, {
+		    "name": "扬州",
+		    "value": 64,
+		    "local": {"lng": 119.42, "lat": 32.39},
+		    "id": 10
+		}]
+	}
+}

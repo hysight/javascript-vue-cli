@@ -1,0 +1,19 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": [
+        {
+            "value": 150,
+            "name": "其他收入"
+        }, {
+            "value": 150,
+            "name": "维修收入"
+        }, {
+            "value": 100,
+            "name": "广告收入"
+        }, {
+            "value": 100,
+            "name": "场地租赁收入"
+        }    
+    ]
+}

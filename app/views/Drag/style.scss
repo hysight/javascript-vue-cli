@@ -1,0 +1,17 @@
+/*
+ * @Description: 
+ * @Author: jiannan.lv
+ * @Date: 2019-06-27 10:18:35
+ * @LastEditTime: 2019-06-27 11:47:53
+ * @LastEditors: jiannan.lv
+ */
+.drag {
+  height: calc(100% - 26px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  > div {
+    float: left;
+  }
+}

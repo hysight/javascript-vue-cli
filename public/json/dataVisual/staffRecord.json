@@ -1,0 +1,15 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "staffTotal": 0,
+        "outsourced": 0,
+        "interior": 0,
+        "manage": 0,
+        "worker": 0,
+        "averageIncoming": 0,
+        "averageArea": 0,
+        "averageService": 0
+        
+    }
+}

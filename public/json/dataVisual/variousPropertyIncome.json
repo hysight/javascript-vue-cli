@@ -1,0 +1,9 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "variousIncome": 20000,
+        "propertyIncome": 60000,
+        "totalIncome": 80000
+    }
+}

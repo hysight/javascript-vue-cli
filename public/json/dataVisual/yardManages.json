@@ -1,0 +1,12 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "usedStall": 60000,
+        "availableStall": 40000,
+        "totalStall": 100000,
+        "interimIncome": 4000,
+        "fixedIncome": 6000,
+        "totalIncome": 10000
+    }
+}

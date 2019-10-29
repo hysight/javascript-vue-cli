@@ -1,0 +1,14 @@
+{
+	"code": 1,
+	"result": {
+		"name": "北京分公司",
+		"income": 2000,
+		"multiIncome": 12000,
+		"cost": 5000,
+		"profit": 1200,
+		"propertyRate": 89,
+		"recoveryRate": 90,
+		"clearDebts": 8800,
+		"clearDebtsRate": 92
+	}
+}

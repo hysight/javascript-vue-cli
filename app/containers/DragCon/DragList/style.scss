@@ -1,0 +1,46 @@
+/*
+ * @Description: 
+ * @Author: jiannan.lv
+ * @Date: 2019-06-27 11:13:19
+ * @LastEditTime: 2019-07-01 18:57:29
+ * @LastEditors: jiannan.lv
+ */
+.drag-list {
+  border-right: 1px solid #ccc;
+  background: #eef2f5;
+  height: 100%;
+  left: -100px;
+  padding-top: 10px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  z-index: 3;
+  transition-duration: 1s;
+  &.open-drag-list {
+    left: 0px;
+  }
+  .iconfont {
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right: -18px;
+    top: 3px;
+    &.iconclose {
+      right: 0;
+    }
+  }
+  .drag-title {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .drag-item-list {
+    border: 1px solid #000;
+    cursor: pointer;
+    height: 25px;
+    margin: auto;
+    width: 50px;
+  }
+}

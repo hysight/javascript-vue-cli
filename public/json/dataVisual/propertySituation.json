@@ -1,0 +1,14 @@
+{
+    "code": 0,
+    "message": "success",
+    "result": {
+        "proTotal": 180,
+        "proArea": 16000,
+        "staffTotal": 4500,
+        "userTotal": 4500,
+        "company": 16,
+        "complain": 1800,
+        "totalHouseholds": 2100,
+        "atNumber": 14000
+    }
+}

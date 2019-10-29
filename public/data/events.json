@@ -1,0 +1,16 @@
+{
+	"code": 1,
+	"result":[{
+		"name": "报事",
+		"value": 12
+	}, {
+		"name": "咨询",
+		"value": 14
+	}, {
+		"name": "建议",
+		"value": 23
+	}, {
+		"name": "表扬",
+		"value": 12
+	}]
+}

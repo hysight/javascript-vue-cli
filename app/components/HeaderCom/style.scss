@@ -1,0 +1,63 @@
+/*
+ * @Author: jiannan.lv 
+ * @Date: 2019-05-09 11:29:10 
+ * @Last Modified by: jiannan.lv
+ * @Last Modified time: 2019-05-09 11:50:31
+ */
+.header {
+    background: #4065d9;
+    height: 50px;
+    position: relative;
+    .logo-part {
+        padding-left: 10px;
+        .header-title {
+            color: #fff;
+            display: inline-block;
+            font-size: 20px;
+            height: 50px;
+            line-height: 50px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .iconfont {
+            color: #fff;
+            cursor: pointer;
+            font-size: 36px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    }
+    .user-part {
+        height: 100%;
+        padding-right: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        .img-wrap {
+            background: #619fe7;
+            border-radius: 50%;
+            display: inline-block;
+            height: 30px;
+            margin-right: 10px;
+            padding-top: 1px;
+            text-align: center;
+            width: 30px;
+            vertical-align: middle;
+            .user-img {
+                height: 25px;
+                width: 25px;
+            }
+        }
+        
+        .user-name {
+            display: inline-block;
+            > p {
+                color: #fff;
+                font-size: 14px;
+                height: 50px;
+                line-height: 50px;
+            }
+        }
+    }
+    
+}

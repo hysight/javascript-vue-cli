@@ -7,24 +7,31 @@
  -->
 <template>
   <div class="drag-item"
-       :style="itemTempData.style"
+       :style="itemTempData ? itemTempData.style : {}"
        @mousedown="dragStart"
        @dblclick="(e) => this.selectItem(e, itemId)"
-       @click="(e) => dragItemClick(e)" >
-    <p>{{itemTempData.value}}</p>
-    <i v-for="item in iconArr"
-       :key="item"
-       :class="item"
-       :style="{'display': selectItemId === itemId ? 'block' : 'none'}"
-       @mousedown="(e) => dragStart(e, item)" />
-    <i v-for="item in lineIconArr"
-       class="lineIcon"
-       :key="item"
-       :class="item"
-       :style="{'display': lineBool ? 'block': ''}"
-       @click="(e) => linePointClick(e)"
-       @mousedown="(e) => drawLineStart(e, itemData, item, itemId)"
-       @mouseup="(e) => drawLineEnd(e, item, itemId, itemData)" />
+       @contextmenu.prevent="(e) => handleContextmenu(e, itemId)"
+       @click="(e) => dragItemClick(e)">
+    <p v-if="itemTempData && itemTempData.type === 'text'">{{itemTempData.value}}</p>
+    <img v-else-if="itemTempData && itemTempData.type === 'img'"
+         :src="`/public/images/draglist/${itemTempData.src}.png`"
+         alt="x">
+    <div class="icon-wrap"
+         v-show="mode === 'edit'">
+      <i v-for="item in iconArr"
+         :key="item"
+         :class="item"
+         :style="{'display': selectItemId === itemId ? 'block' : 'none'}"
+         @mousedown="(e) => dragStart(e, item)" />
+      <i v-for="item in lineIconArr"
+         class="lineIcon"
+         :key="item"
+         :class="item"
+         :style="{'display': lineBool && item !== 'top' && item !== 'bottom' ? 'block': ''}"
+         @click="(e) => linePointClick(e)"
+         @mousedown="(e) => drawLineStart(e, itemData, item, itemId)"
+         @mouseup="(e) => drawLineEnd(e, item, itemId, itemData)" />
+    </div>
   </div>
 </template>
 
@@ -39,9 +46,15 @@
     name: "drag-item",
     props: {
       itemData: Object,
-      itemId: String
+      itemId: String,
+      mode: {
+        type: String,
+        default: () => {
+          return 'edit';
+        }
+      }
     },
-    data() {
+    data () {
       return {
         drag: false,
         itemTempData: this.itemData,
@@ -79,37 +92,38 @@
         addLineId: "addLineId",
         updateLineInfo: "updateLineInfo",
         updateLineList: "updateLineList",
-        updateDataList: "updateDataList"
+        updateDataList: "updateDataList",
+        updateContextMenu: "updateContextMenu"
       }),
       // 阻止事件冒泡
-      stopProps(event) {
+      stopProps (event) {
         event.stopPropagation();
         event.preventDefault();
       },
       // 拖拽元素的点击事件
-      dragItemClick(e) {
+      dragItemClick (e) {
         const event = e || window.event;
         this.stopProps(event);
       },
       // 选中元素
-      selectItem(e, itemId) {
+      selectItem (e, itemId) {
         const event = e || window.event;
         this.stopProps(event);
         this.selectDragItem(itemId);
       },
       // 拖拽开始
-      dragStart(e, type) {
+      dragStart (e, type) {
         const event = e || window.event;
         this.stopProps(event);
         this.drag = true;
         this.changeType = type ? type : "";
         this.startX = event.clientX;
         this.startY = event.clientY;
-        document.onmouseup = this.lineBool ? this.drawLineEnd : this.dragend;
-        document.onmousemove = this.lineBool ? this.lineDragging : this.dragging;
+        document.onmouseup = this.lineBool ? this.drawLineEnd : this.mode === 'edit' ? this.dragend : null;
+        document.onmousemove = this.lineBool ? this.lineDragging : this.mode === 'edit' ? this.dragging : null;
       },
       // 拖拽结束
-      dragend(e) {
+      dragend (e) {
         const event = e || window.event;
         const params = {
           id: this.itemId,
@@ -122,7 +136,7 @@
         this.updateDataList(params);
       },
       // 拖拽中
-      dragging(e) {
+      dragging (e) {
         if (this.lineBool) return;
         const event = e || window.event;
         let { style } = this.itemTempData;
@@ -146,7 +160,7 @@
         this.updateLine();
       },
       // 更新线
-      updateLine() {
+      updateLine () {
         const params = {
           itemId: this.itemId,
           itemData: this.itemTempData
@@ -154,7 +168,7 @@
         this.updateLineList(params);
       },
       // 改变拖拽元素宽高
-      leftTop(event, style) {
+      leftTop (event, style) {
         const itemTop = parseInt(style.top) + (event.clientY - this.startY);
         const itemLeft = parseInt(style.left) + (event.clientX - this.startX);
         const itemHeight = parseInt(style.height) + (this.startY - event.clientY);
@@ -169,7 +183,7 @@
         };
         return itemStyle;
       },
-      centerTop(event, style) {
+      centerTop (event, style) {
         const itemTop = parseInt(style.top) + (event.clientY - this.startY);
         const itemHeight = parseInt(style.height) + (this.startY - event.clientY);
         this.startY = event.clientY;
@@ -179,7 +193,7 @@
         };
         return itemStyle;
       },
-      rightTop(event, style) {
+      rightTop (event, style) {
         const itemTop = parseInt(style.top) + (event.clientY - this.startY);
         const itemHeight = parseInt(style.height) + (this.startY - event.clientY);
         const itemWidth = parseInt(style.width) + (event.clientX - this.startX);
@@ -192,7 +206,7 @@
         };
         return itemStyle;
       },
-      leftCenter(event, style) {
+      leftCenter (event, style) {
         const itemLeft = parseInt(style.left) + (event.clientX - this.startX);
         const itemWidth = parseInt(style.width) + (this.startX - event.clientX);
         this.startX = event.clientX;
@@ -202,7 +216,7 @@
         };
         return itemStyle;
       },
-      leftBottom(event, style) {
+      leftBottom (event, style) {
         const itemLeft = parseInt(style.left) + (event.clientX - this.startX);
         const itemHeight = parseInt(style.height) + (event.clientY - this.startY);
         const itemWidth = parseInt(style.width) + (this.startX - event.clientX);
@@ -215,7 +229,7 @@
         };
         return itemStyle;
       },
-      rightCenter(event, style) {
+      rightCenter (event, style) {
         const itemWidth = parseInt(style.width) + (event.clientX - this.startX);
         this.startX = event.clientX;
         const itemStyle = {
@@ -223,7 +237,7 @@
         };
         return itemStyle;
       },
-      centerBottom(event, style) {
+      centerBottom (event, style) {
         const itemHeight = parseInt(style.height) + (event.clientY - this.startY);
         this.startY = event.clientY;
         const itemStyle = {
@@ -231,7 +245,7 @@
         };
         return itemStyle;
       },
-      rightBottom(event, style) {
+      rightBottom (event, style) {
         const itemHeight = parseInt(style.height) + (event.clientY - this.startY);
         const itemWidth = parseInt(style.width) + (event.clientX - this.startX);
         this.startX = event.clientX;
@@ -243,12 +257,13 @@
         return itemStyle;
       },
       // -------------------------划线模块-------------------------
-      linePointClick(e) {
+      linePointClick (e) {
         const event = e || window.event;
         this.stopProps(event);
       },
       // 开始划线
-      drawLineStart(e, itemData, item, itemId) {
+      drawLineStart (e, itemData, item, itemId) {
+        console.log(111);
         const event = e || window.event;
         const lineId = _UUID();
         this.addLineId(lineId);
@@ -261,7 +276,7 @@
         this.tempLineItem["source"]["dirc"] = item;
       },
       // 拖拽过程划线
-      lineDragging(e) {
+      lineDragging (e) {
         const event = e || window.event;
         const endPoint = {
           x2: this.tempLineItem.x2 + (event.clientX - this.lineStartX),
@@ -277,7 +292,7 @@
         this.addLineToLineList(lineParams);
       },
       // 划线结束
-      drawLineEnd(e, item, itemId, itemData) {
+      drawLineEnd (e, item, itemId, itemData) {
         const event = e || window.event;
         this.lineItem["target"] = {};
         this.lineItem["target"]["id"] = itemId;
@@ -294,6 +309,19 @@
         this.addLineToLineList(lineParams);
         this.tempLineItem = {};
         document.onmouseup = null;
+      },
+      // 右键事件
+      handleContextmenu (e, itemId) {
+        const event = e || window.event;
+        const x = event.pageX;
+        const y = event.pageY;
+        const params = {
+          left: `${x}px`,
+          top: `${y}px`,
+          show: true
+        };
+        this.updateContextMenu(params);
+        this.selectDragItem(itemId);
       }
     }
   };

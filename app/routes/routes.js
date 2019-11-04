@@ -19,7 +19,7 @@ const appRouter = [
             {
                 path: '/home',
                 name: 'home',
-                component: () => import('app/containers/Home/home.vue'),
+                component: () => import('app/views/Home/home.vue'),
                 meta: {
                     name: '主页'
                 }
@@ -49,11 +49,27 @@ const appRouter = [
                 }
             },
             {
-                path: '/dragCon',
-                name: 'dragCon',
+                path: '/home/drag',
+                name: 'drag',
                 component: () => import('app/views/Drag/dragCon.vue'),
                 meta: {
-                    name: '拖拽组件'
+                    name: '编辑流程'
+                }
+            },
+            {
+                path: '/home/flowDetail',
+                name: 'flowDetail',
+                component: () => import('app/views/FlowDetail/flowDetail.vue'),
+                meta: {
+                    name: '流程详情'
+                }
+            },
+            {
+                path: 'mock',
+                name: 'mock',
+                component: () => import('app/views/Mock/mock.vue'),
+                meta: {
+                    name: 'Mock数据'
                 }
             }
         ]

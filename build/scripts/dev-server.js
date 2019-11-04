@@ -48,7 +48,7 @@ const compiler = webpack(webpackConfig);
 // ======================================================
 app.all(
     // ['^/yuanyang/leader/*'],
-    ['/api/login', '/api/user/*'],
+    ['/api/login', '/api/user/*', '/api/drag/*'],
     proxy({
         target: 'http://127.0.0.1:8800',
         changeOrigin: true

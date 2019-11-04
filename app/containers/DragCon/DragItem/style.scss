@@ -2,26 +2,31 @@
  * @Description: 
  * @Author: jiannan.lv
  * @Date: 2019-06-27 19:50:25
- * @LastEditTime: 2019-07-04 15:48:04
- * @LastEditors: jiannan.lv
+*@LastEditTime: 2019-10-30 14:00:19
+*@LastEditors: jiannan.lv
  */
 .drag-item {
-  border: 1px solid #000;
+  // border: 1px solid #ccc;
   cursor: pointer;
   position: absolute;
-
-  >p {
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
+  > img {
+    height: 100%;
+    width: 100%;
+  }
+  .icon-wrap {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
-  >i {
+  i {
     background: #eef2f5;
     display: none;
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border: 1px solid orange;
     z-index: 2;
 
@@ -74,9 +79,11 @@
     }
 
     &.lineIcon {
-      border: 1px solid #007acc;
+      border: 2px solid #007acc;
       border-radius: 50%;
       cursor: crosshair;
+      height: 10px;
+      width: 10px;
     }
 
     &.left {
@@ -85,6 +92,7 @@
     }
 
     &.top {
+      display: none;
       left: calc(50% - 4px);
       top: -8px;
     }
@@ -96,6 +104,7 @@
 
     &.bottom {
       bottom: -8px;
+      display: none;
       left: calc(50% - 4px);
     }
   }

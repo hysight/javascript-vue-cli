@@ -7,40 +7,62 @@
  */
 .drag-list {
   border-right: 1px solid #ccc;
-  background: #eef2f5;
+  background: rgba(154, 201, 244, 0.2);
   height: 100%;
-  left: -100px;
+  left: -200px;
   padding-top: 10px;
   position: absolute;
   top: 0;
-  width: 100px;
+  width: 200px;
   z-index: 3;
   transition-duration: 1s;
   &.open-drag-list {
     left: 0px;
   }
   .iconfont {
-    color: #000;
+    background: #000;
+    color: #fff;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
     position: absolute;
-    right: -18px;
-    top: 3px;
+    right: -21px;
+    text-align: center;
+    top: 0px;
+    width: 21px;
     &.iconclose {
       right: 0;
     }
   }
-  .drag-title {
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-  }
   .drag-item-list {
-    border: 1px solid #000;
-    cursor: pointer;
-    height: 25px;
-    margin: auto;
-    width: 50px;
+    .model-wrap {
+      padding: 0 0 10px 15px;
+      .model-title {
+        border-left: 2px solid green;
+        color: #666;
+        font-weight: bold;
+        height: 22px;
+        line-height: 22px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+      }
+      .item-list {
+        span {
+          border: 1px solid #ccc;
+          cursor: pointer;
+          display: inline-block;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          width: 80px;
+        }
+        img {
+          cursor: pointer;
+          height: 40px;
+          margin-right: 15px;
+          width: 40px;
+        }
+      }
+    }
   }
 }

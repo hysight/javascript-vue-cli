@@ -2,37 +2,32 @@
  * @Description: 
  * @Author: jiannan.lv
  * @Date: 2019-10-28 10:37:47
- * @LastEditTime: 2019-10-28 12:40:46
+ * @LastEditTime: 2019-11-01 11:14:17
  * @LastEditors: jiannan.lv
  -->
 <template>
   <Modal v-model="modalShow"
-         :title="type === 'edit' ? '编辑用户' : '新增用户'"
+         :title="type === 'edit' ? '编辑用户' : '新建流程'"
          width="500"
          :mask-closable="false"
          @on-cancel="handleCancel">
-    <Form ref="userInfo"
+    <Form ref="flowInfo"
           :rules="ruleValidate"
-          :model="userInfo"
+          :model="flowInfo"
           :label-width="80">
-      <FormItem label="用户名"
-                prop="name">
-        <Input v-model="userInfo.name"
-               placeholder="请输入用户名" />
+      <FormItem label="中文名"
+                prop="chName">
+        <Input v-model="flowInfo.chName"
+               placeholder="请输入中文名" />
       </FormItem>
-      <FormItem label="密码"
-                prop="passward">
-        <Input v-model="userInfo.passward"
-               placeholder="请输入密码" />
-      </FormItem>
-      <FormItem label="部门"
-                prop="department">
-        <Input v-model="userInfo.department"
-               placeholder="请输入部门" />
+      <FormItem label="英文名"
+                prop="enName">
+        <Input v-model="flowInfo.enName"
+               placeholder="请输入英文名" />
       </FormItem>
       <FormItem label="备注"
                 prop="mark">
-        <Input v-model="userInfo.mark"
+        <Input v-model="flowInfo.mark"
                type="textarea"
                placeholder="请输入备注" />
       </FormItem>
@@ -46,8 +41,10 @@
 </template>
 
 <script>
+  // mrthod
+  import { _UUID } from 'app/utils/tools';
   // api
-  import { addUserApi } from "app/api/userList";
+  import { saveChartApi } from "app/api/drag";
   export default {
     name: 'userEdit',
     props: {
@@ -67,21 +64,17 @@
     data () {
       return {
         modalShow: this.value,
-        userInfo: {
-          name: '',
-          passward: '',
-          department: '',
+        flowInfo: {
+          chName: '',
+          enName: '',
           mark: ''
         },
         ruleValidate: {
-          name: [
-            { required: true, message: '用户名不能为空', trigger: 'blur' }
+          chName: [
+            { required: true, message: '中文名不能为空', trigger: 'blur' }
           ],
-          passward: [
-            { required: true, message: '密码不能为空', trigger: 'blur' }
-          ],
-          department: [
-            { required: true, message: '部门不能为空', trigger: 'blur' }
+          enName: [
+            { required: true, message: '英文名不能为空', trigger: 'blur' }
           ]
         }
       };
@@ -102,7 +95,7 @@
     methods: {
       // 初始化数据
       initData () {
-        this.userInfo = {
+        this.flowInfo = {
           name: '',
           passward: '',
           department: '',
@@ -117,16 +110,24 @@
       },
       // 确定时间
       handleSure () {
-        const params = { ...this.userInfo };
-        this.$refs.userInfo.validate((valid) => {
+        const params = { ...this.flowInfo };
+        const design = {
+          dataList: [],
+          lineList: []
+        };
+        this.$refs.flowInfo.validate((valid) => {
           if (!valid) {
             return false
           }
-          addUserApi(params)
+          params['chartId'] = _UUID();
+          params['design'] = JSON.stringify(design);
+          params['type'] = 'add';
+          params['createTime'] = new Date().getTime();
+          saveChartApi(params)
             .then(res => {
               this.$Message.info(res);
               this.$emit('input', false);
-              this.$parent.getUserList();
+              this.$parent.getChartList();
             })
             .catch(error => {
               this.$Message.error(error);

@@ -6,30 +6,43 @@
  * @LastEditors: jiannan.lv
  */
 .tools-wrap {
-  background: #fff;
+  // background: #fff;
   position: absolute;
-  right: 5px;
-  top: 20px;
+  right: 20px;
+  top: -26px;
   z-index: 10;
 
-  >ul {
+  > ul {
+    display: inline-block;
     overflow: hidden;
+    vertical-align: middle;
 
-    >li {
+    > li {
       cursor: pointer;
       float: left;
       height: 26px;
       line-height: 26px;
+      margin-right: 10px;
       text-align: center;
       width: 26px;
 
-      >i {
+      > i {
         cursor: pointer;
       }
       &.line-draw-active {
-        background: #354157;
+        background: rgba(0, 122, 204, 0.3);
         color: #fff;
       }
     }
+  }
+  .save-p {
+    color: #2d8cf0;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bolder;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 1000px;
+    vertical-align: middle;
   }
 }

@@ -1,0 +1,27 @@
+.context-menu {
+  background: rgba(154, 201, 244, 0.8);
+  box-shadow: 3px 3px 5px #888888;
+  border-radius: 5px;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  .context-menu-list {
+    padding: 10px 0px;
+    > li {
+      cursor: pointer;
+      height: 26px;
+      line-height: 26px;
+      padding: 0 25px 0 10px;
+      > i {
+        margin-right: 10px;
+      }
+      &:hover {
+        background: rgba(64, 101, 217, 0.5);
+        color: #fff;
+      }
+    }
+  }
+  &.context-menu-active {
+    display: block;
+  }
+}

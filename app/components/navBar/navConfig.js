@@ -22,8 +22,14 @@ const navConfig = [{
     path: '/comcon',
     name: '公用组件'
 }, {
-    icon: 'iconfont icondrag',
-    path: '/dragCon',
-    name: '拖拽模块'
-}];
+    icon: 'iconfont icondata',
+    path: '/mock',
+    name: 'Mock数据'
+}
+    //  {
+    //     icon: 'iconfont icondrag',
+    //     path: '/drag',
+    //     name: '拖拽模块'
+    // }
+];
 export default navConfig;

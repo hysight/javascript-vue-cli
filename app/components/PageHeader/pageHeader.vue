@@ -1,5 +1,6 @@
 <template>
-  <div class="page-header">
+  <div class="page-header"
+       :class="border ? '' : 'no-border'">
     <p>{{text}}</p>
   </div>
 </template>
@@ -13,7 +14,13 @@
       text: {
         type: String,
         default: () => {
-          return ''
+          return '';
+        }
+      },
+      border: {
+        type: Boolean,
+        defult: () => {
+          return true;
         }
       }
     },

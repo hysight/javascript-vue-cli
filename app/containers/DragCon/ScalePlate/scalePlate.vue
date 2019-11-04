@@ -6,7 +6,8 @@
  * @LastEditors: jiannan.lv
  -->
 <template>
-  <div class="scale-plate" :class="scaleBool ? '' : 'hide-scale-plate'">
+  <div class="scale-plate"
+       :class="scaleBool ? '' : 'hide-scale-plate'">
     <canvas class="scaleplateX"
             height="20px"
             ref="scalePlateX" />
@@ -26,7 +27,7 @@
       dragRegionConfig: Object
     },
     watch: {
-      dragRegionConfig(newConfig, oldConfig) {
+      dragRegionConfig (newConfig, oldConfig) {
         this.dragRegionConfig = newConfig;
         this.drawAxes();
       }
@@ -36,12 +37,12 @@
         scaleBool: "scaleBool"
       })
     },
-    data() {
+    data () {
       return {};
     },
     methods: {
       // 画标尺Fn
-      drawAxes() {
+      drawAxes () {
         const rulerCanvasX = this.$refs["scalePlateX"];
         const rulerCanvasY = this.$refs["scalePlateY"];
         const ctxX = rulerCanvasX.getContext("2d");
@@ -79,7 +80,7 @@
       },
 
       // 画横坐标
-      drawHorizontalAxis(ctx, canvas) {
+      drawHorizontalAxis (ctx, canvas) {
         ctx.beginPath();
         ctx.moveTo(0, 20);
         ctx.lineTo(this.dragRegionConfig.width, 20);
@@ -88,7 +89,7 @@
       },
 
       // 画纵坐标
-      drawVerticalAxis(ctx, canvas) {
+      drawVerticalAxis (ctx, canvas) {
         ctx.beginPath();
         ctx.moveTo(20, 0);
         ctx.lineTo(20, this.dragRegionConfig.height);
@@ -97,7 +98,7 @@
       },
 
       //画横坐标刻度
-      drawVerticalAxisTicks(ctx, canvas) {
+      drawVerticalAxisTicks (ctx, canvas) {
         let deltaX;
         for (let i = 0; i < this.dragRegionConfig.height / 10; ++i) {
           ctx.beginPath();
@@ -119,7 +120,7 @@
       },
 
       //画纵坐标刻度
-      drawHorizontalAxisTicks(ctx, canvas) {
+      drawHorizontalAxisTicks (ctx, canvas) {
         let deltaY;
         for (let i = 0; i < this.dragRegionConfig.width / 10; ++i) {
           ctx.beginPath();

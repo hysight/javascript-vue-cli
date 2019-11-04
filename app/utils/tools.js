@@ -24,7 +24,7 @@ export const filterLine = data => {
     const tempData = { ...data };
     Object.keys(data).map(key => {
 
-        if(data[key].target.id === undefined) delete tempData[key];
+        if (data[key].target.id === undefined) delete tempData[key];
 
     });
     return tempData;
@@ -32,20 +32,19 @@ export const filterLine = data => {
 };
 // 组件拖动，重新计算线的位置
 export const renewalLineList = (lineList, dataList, params) => {
-
     let tempLineList = { ...lineList };
-    const { style } = params.itemData;
+    const { style = {} } = params.itemData;
     Object.keys(lineList).map(key => {
 
         let lineParams = {};
-        if(lineList[key].source.id === params.itemId) {
+        if (lineList[key].source.id === params.itemId) {
 
             lineParams = {
                 x1: lineList[key].source.dirc === 'left' ? parseInt(style.left, 10) : lineList[key].source.dirc === 'right' ? parseInt(style.left, 10) + parseInt(style.width, 10) : parseInt(style.left, 10) + parseInt(style.width, 10) / 2,
                 y1: lineList[key].source.dirc === 'top' ? parseInt(style.top, 10) : lineList[key].source.dirc === 'bottom' ? parseInt(style.top, 10) + parseInt(style.height, 10) : parseInt(style.top, 10) + parseInt(style.height, 10) / 2
             };
 
-        } else if(lineList[key].target.id === params.itemId) {
+        } else if (lineList[key].target.id === params.itemId) {
 
             lineParams = {
                 x2: lineList[key].target.dirc === 'left' ? parseInt(style.left, 10) : lineList[key].target.dirc === 'right' ? parseInt(style.left, 10) + parseInt(style.width, 10) : parseInt(style.left, 10) + parseInt(style.width, 10) / 2,
@@ -62,7 +61,7 @@ export const renewalLineList = (lineList, dataList, params) => {
 // 去除对象值为空的字段
 export const rmObjEmptyFields = obj => {
 
-    if(!obj || Object.prototype.toString.call(obj) !== '[object Object]') return obj;
+    if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') return obj;
 
     return Object.keys(obj).filter(key => typeof obj[key] === 'number' || !!obj[key]).reduce((_obj, key2) => {
 

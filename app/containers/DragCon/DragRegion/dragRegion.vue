@@ -6,7 +6,8 @@
  * @LastEditors: jiannan.lv
  -->
 <template>
-  <div class="drag-region" ref="dragRegion">
+  <div class="drag-region"
+       ref="dragRegion">
     <DrawRegion />
     <ScalePlate :dragRegionConfig="dragRegionConfig" />
     <Tools />
@@ -22,14 +23,14 @@
   import "./style.scss";
   export default {
     name: "drag-region",
-    data() {
+    data () {
       return {
         dragRegionConfig: {}
       };
     },
     methods: {
       // 获取拖拽区域宽高
-      getDragRegionConfig() {
+      getDragRegionConfig () {
         const dragRegion = this.$refs["dragRegion"];
         const dragRegionW = dragRegion.clientWidth;
         const dragRegionH = dragRegion.clientHeight;
@@ -39,7 +40,7 @@
         };
       }
     },
-    mounted() {
+    mounted () {
       this.getDragRegionConfig()
     },
     components: {

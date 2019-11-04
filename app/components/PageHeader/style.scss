@@ -6,7 +6,13 @@
     border-left: 3px solid #4065d9;
     color: #000;
     font-weight: bold;
-    font-family: "Microsoft YaHei";
+    font-family: 'Microsoft YaHei';
     padding-left: 15px;
+  }
+  &.no-border {
+    margin-bottom: 0;
+    p {
+      border: none;
+    }
   }
 }

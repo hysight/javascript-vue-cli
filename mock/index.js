@@ -1,12 +1,8 @@
-/**
- *@Author: hy-zhangb
- *Date: 2018/8/6 11:04
- *@Last Modified by: hy-zhangb
- *@Last Modified time: 2018/8/6 11:04
- *Email: lovewinders@163.com
- *File Path: data - server
- *@File Name: server
- *@Description: Description
+/*
+ * @Author: jiannan.lv
+ * @Date: 2019-05-09 10:19:58
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2019-11-05 13:23:07
  */
 'use strict';
 import Koa from 'koa';

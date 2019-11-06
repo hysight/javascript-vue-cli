@@ -46,7 +46,7 @@ const compiler = webpack(webpackConfig);
 // ======================================================
 // proxy server
 // ======================================================
-app.all(
+app.use(
     // ['^/yuanyang/leader/*'],
     ['/api/login', '/api/user/*', '/api/drag/*'],
     proxy({
@@ -57,6 +57,18 @@ app.all(
             '^/api/old-path': '/api/new-path',     // rewrite path
             '^/api/remove/path': '/path'           // remove base path
         }*/
+    }));
+app.use(
+    // ['^/yuanyang/leader/*'],
+    ['/api/mock/*'],
+    proxy({
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true
+        // ws: true
+        // pathRewrite: {
+        // '^/api/old-path': '/api/new-path',     // rewrite path
+        // '^/api/remove/path': '/path'           // remove base path
+        // }
     }));
 
 // ======================================================
@@ -97,7 +109,6 @@ app.use(require('webpack-dev-middleware')(compiler, {
 // ======================================================
 // webpack hot middleware
 // ======================================================
-console.log('COMPILER_PUBLIC_PATH', COMPILER_PUBLIC_PATH);
 app.use(require('webpack-hot-middleware')(compiler, {
     log: console.log,
     path: `${COMPILER_NAME ? `/${COMPILER_NAME}` : ''}/__webpack_hmr`,
